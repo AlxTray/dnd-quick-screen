@@ -19,12 +19,15 @@ else
 
 @code {
     private string characterData;
+
+    private string[] characterIds = ["155705536", ""];
     
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            characterData = await Http.GetFromJsonAsync<string>("/api/CharacterData") ?? string.Empty;
+            string id = "155705536";
+            characterData = await Http.GetFromJsonAsync<string>($"/api/CharacterData/{id}") ?? string.Empty;
         }
         catch (Exception ex)
         {
