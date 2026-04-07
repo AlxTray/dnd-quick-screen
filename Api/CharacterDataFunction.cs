@@ -30,9 +30,9 @@ namespace Api
             return response;
         }
 
-        private static async Task<CharacterData> ShapeResponse(HttpResponseMessage response)
+        private static async Task<CharacterData> ShapeResponse(HttpResponseMessage beyondResponse)
         {
-            var jsonCharacterData = await response.Content.ReadAsStringAsync();
+            var jsonCharacterData = await beyondResponse.Content.ReadAsStringAsync();
             
             var unshapedCharacterDataObj = JsonDocument.Parse(jsonCharacterData);
             var dataElement = unshapedCharacterDataObj.RootElement.GetProperty("data");

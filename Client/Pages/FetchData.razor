@@ -14,11 +14,15 @@
 }
 else
 {
-    <p>@characterData</p>
+    <p>@characterData.Name</p>
+    <p>@characterData.Inspiration</p>
+    <p>@characterData.BaseHitPoints</p>
+    <p>@characterData.RemovedHitPoints</p>
+    <p>@characterData.TemporaryHitPoints</p>
 }
 
 @code {
-    private string characterData;
+    private CharacterData characterData;
 
     private string[] characterIds = ["155705536", ""];
     
@@ -27,7 +31,7 @@ else
         try
         {
             string id = "155705536";
-            characterData = await Http.GetFromJsonAsync<string>($"/api/CharacterData/{id}") ?? string.Empty;
+            characterData = await Http.GetFromJsonAsync<CharacterData>($"/api/CharacterData/{id}") ?? default;
         }
         catch (Exception ex)
         {
