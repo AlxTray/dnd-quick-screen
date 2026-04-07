@@ -8,30 +8,48 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (characterData == null)
+@if (characterDataList.Count != 2)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <p>@characterData.Name</p>
-    <p>@characterData.Inspiration</p>
-    <p>@characterData.BaseHitPoints</p>
-    <p>@characterData.RemovedHitPoints</p>
-    <p>@characterData.TemporaryHitPoints</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Inspiration</th>
+            <th>Base Hit Points</th>
+            <th>Removed Hit Points</th>
+            <th>Temporary Hit Points</th>
+        </tr>
+        @foreach (var characterData in characterDataList)
+        {
+            <tr>
+                <td>@characterData.Name</td>
+                <td>@characterData.Inspiration</td>
+                <td>@characterData.BaseHitPoints</td>
+                <td>@characterData.RemovedHitPoints</td>
+                <td>@characterData.TemporaryHitPoints</td>
+            </tr>
+        }
+    </table>
 }
 
 @code {
-    private CharacterData characterData;
+    private List<CharacterData> characterDataList;
 
-    private string[] characterIds = ["155705536", ""];
+    private string[] characterIds = ["155705536", "155705736", "155388383", "156155549", "156927653", "146974607"];
     
     protected override async Task OnInitializedAsync()
     {
+        characterDataList = [];
+        
         try
         {
-            string id = "155705536";
-            characterData = await Http.GetFromJsonAsync<CharacterData>($"/api/CharacterData/{id}") ?? default;
+            foreach (var characterId in characterIds)
+            {
+                characterDataList.Add(await Http.GetFromJsonAsync<CharacterData>($"/api/CharacterData/{characterId}"));
+            }
         }
         catch (Exception ex)
         {
