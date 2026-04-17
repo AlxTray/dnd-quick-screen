@@ -48,7 +48,7 @@ else
         {
             foreach (var characterId in characterIds)
             {
-                characterDataList.Add(await Http.GetFromJsonAsync<CharacterData>($"/api/character/{characterId}"));
+                characterDataList.Add(await Http.GetFromJsonAsync<CharacterData>($"/api/Character/{characterId}"));
             }
         }
         catch (Exception ex)

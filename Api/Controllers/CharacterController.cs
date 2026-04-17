@@ -13,7 +13,7 @@ public class CharacterController : ControllerBase
         BaseAddress = new Uri("https://character-service.dndbeyond.com"),
     };
     
-    [Route("character/{id:int}")]
+    [Route("{id:int}")]
     [HttpGet]
     public async Task<CharacterData> Get(int id)
     {

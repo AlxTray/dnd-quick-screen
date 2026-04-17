@@ -1,0 +1,7 @@
+﻿services:
+  beyondworker:
+    image: beyondworker
+    build:
+      context: .
+      dockerfile: BeyondWorker/Dockerfile
+

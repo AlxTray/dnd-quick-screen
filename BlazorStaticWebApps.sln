@@ -9,6 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{CEF28A6B-A047-4153-A4E0-5A2A921B432E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondWorker", "BeyondWorker\BeyondWorker.csproj", "{B2906750-F53F-4174-A370-7CA382EFCE2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CCD09778-25C0-4B91-875A-60B08AEE767D}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{CEF28A6B-A047-4153-A4E0-5A2A921B432E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF28A6B-A047-4153-A4E0-5A2A921B432E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEF28A6B-A047-4153-A4E0-5A2A921B432E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2906750-F53F-4174-A370-7CA382EFCE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2906750-F53F-4174-A370-7CA382EFCE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2906750-F53F-4174-A370-7CA382EFCE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2906750-F53F-4174-A370-7CA382EFCE2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
